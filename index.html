@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saisie Inv PRINCI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. SECTION LOGIN (Toy ny Facebook) -->
+    <div id="login-container" class="login-wrapper">
+        <div class="login-box">
+            <h1 class="login-logo">SAISIE PRINCI</h1>
+            <p class="login-subtitle">Connexion à Saisie Inventaire</p>
+            
+            <div id="login-error" class="alert-danger" style="display: none;">
+                Email na Password diso! Azafady jereo tsara.
+            </div>
+
+            <form id="form-login">
+                <input type="email" id="login-email" placeholder="Adresse e-mail" required>
+                <input type="password" id="login-password" placeholder="Mot de passe" required>
+                <button type="submit" class="btn-login">HIDITRA</button>
+            </form>
+            
+            <div class="login-footer-links">
+                <a href="#">ADINO NY MDP ?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. PEJY FANAOVANA SAISIE (Hovohaina rehefa mahomby ny Login) -->
+    <div id="app-container" style="display: none;">
+        
+        <!-- Tab Navigation + Logout -->
+        <div class="tab-wrapper">
+            <div class="tab-container">
+                <button class="tab-button active">🔷 1. Saisie Inventaire</button>
+                <button class="tab-button"> 2. Mbola tsy vita</button>
+                <button class="tab-button"> 3. Mbola tsy vita</button>
+            </div>
+            <button id="btn-logout" class="btn-logout">🚪 HIVOAKA</button>
+        </div>
+
+        <div class="main-container">
+            
+            <!-- Header -->
+            <div class="header-section">
+                <h2 class="title-page">Saisie INV PRINCI</h2>
+                <!-- Ity bokotra ity no novonjena mba hanontany Password any amin'ny JS -->
+                <button type="button" class="btn-sheets" id="btn-open-sheets" style="border: none; cursor: pointer;">Google Sheets</button>
+            </div>
+
+            <!-- Section 1: Informations Générales -->
+            <fieldset class="section-fieldset">
+                <legend class="section-legend">1. Informations Générales</legend>
+                <div class="grid-4-columns">
+                    <div class="form-group">
+                        <label>DATE INV</label>
+                        <input type="date" id="txt-date">
+                    </div>
+                    <div class="form-group">
+                        <label>DATA</label>
+                        <select id="txt-data">
+                            <option value="INV">INV</option>
+                            <option value="ORLI">ORLI</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="required-label">RÉFÉRENCE </label>
+                        <input type="text" id="txt-ref" placeholder="Ex: 50053/240">
+                    </div>
+                    <div class="form-group">
+                        <label>SITE *</label>
+                        <select id="txt-site">
+                            <option value="F4">F4</option>
+                            <option value="F12">F12</option>
+                            <option value="F10">F10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-4-columns margin-top">
+    <div class="form-group">
+        <label>AGENT *</label>
+        <input type="text" id="txt-agent" placeholder="Ex: Princi/Patrick">
+    </div>
+    <div class="form-group">
+        <label class="label-auto">FAMILLE (Auto)</label>
+        <input type="text" id="txt-famille" placeholder="tissu or accessoires">
+    </div>
+    <div class="form-group">
+        <label class="label-auto">STATUT (Auto)</label>
+        <input type="text" id="txt-statut" placeholder="Statut">
+    </div>
+    <div class="form-group">
+        <label class="label-auto">UNITÉ (Auto)</label>
+        <input type="text" id="txt-unite" placeholder="Unité">
+    </div>
+</div>
+
+            </fieldset>
+
+            <!-- Section 2: Saisie des Éléments -->
+            <fieldset class="section-fieldset border-green margin-top-lg">
+                <legend class="section-legend legend-green">2. Saisie des Éléments</legend>
+                
+                <table class="table-saisie">
+                    <thead>
+                        <tr>
+                            <th style="width: 12%;">MAG *</th>
+                            <th style="width: 25%;">LOC (Emplacement) *</th>
+                            <th style="width: 15%;">N° PIÈCE</th>
+                            <th style="width: 28%;">ÉLÉMENT (Code FIFO) *</th>
+                            <th style="width: 15%;">QUANTITÉ * (. ou , au pavé)</th>
+                            <th style="width: 5%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Andalana avy amin'ny JS -->
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn-add-line" id="btn-add-row">HANAMPY ANDALANA</button>
+
+                <!-- Controle Anti-Erreur -->
+                <div class="control-banner">
+                    <span class="control-title">JEREO TSARA ALOHA ETO :</span>
+                    <span class="control-stats">Total Pièces / Lignes : <strong id="lbl-total-lignes" style="color: brown;">0</strong> | Quantité Totale : <strong id="lbl-total-qte" style="color: green;">0</strong></span>
+                </div>
+            </fieldset>
+
+            <!-- Validation Button -->
+            <div class="footer-actions">
+                <button type="button" class="btn-submit" id="btn-submit-all">SAVE</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

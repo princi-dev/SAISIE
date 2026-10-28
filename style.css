@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- STYLE LOGIN (FACEBOOK LOOK) --- */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.login-box {
+    background-color: white;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-logo {
+    color: #1877f2;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.login-subtitle {
+    color: #606770;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.btn-login {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #166fe5;
+}
+
+.alert-danger {
+    background-color: #ffebe9;
+    border: 1px solid #ffc8c2;
+    color: #b31412;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-footer-links {
+    margin-top: 15px;
+    border-top: 1px solid #dadde1;
+    padding-top: 15px;
+}
+
+.login-footer-links a {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* --- APP CONTAINER & LOGOUT --- */
+#app-container {
+    width: 100%;
+}
+
+.tab-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: -1px;
+}
+
+.btn-logout {
+    background-color: #f5222d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: #0aeee3;
+}
+
+/* --- FORMULAIRE STYLE --- */
+.tab-container {
+    display: flex;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-button {
+    background-color: #e0e0e0;
+    border: 1px solid #c0c0c0;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    color: #444;
+}
+
+.tab-button.active {
+    background-color: #ff07c1;
+    color: white;
+    border-color: #e9079e;
+}
+
+.main-container {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #c0c0c0;
+    border-radius: 0 6px 6px 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.title-page {
+    color: #0b57d0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-sheets {
+    background-color: #00d17a;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.section-fieldset {
+    border: 1px solid #4a90e2;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-fieldset.border-green {
+    border: 1px solid #34a853;
+}
+
+.section-legend {
+    color: #00b3fa;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.section-legend.legend-green {
+    color: #34a853;
+}
+
+.grid-4-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.margin-top { margin-top: 15px; }
+.margin-top-lg { margin-top: 30px; }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #08acec;
+    margin-bottom: 6px;
+}
+
+.form-group label.label-auto {
+    color: #34a853;
+}
+
+.form-group .required-label {
+    color: #d93025;
+}
+
+.form-group input, .form-group select {
+    padding: 6px 10px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 36px;
+    outline: none;
+}
+
+.disabled-group input {
+    background-color: #f1f3f4;
+    color: #70757a;
+    border: 1px solid #e8eaed;
+}
+
+.table-saisie {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.table-saisie th {
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    padding: 10px;
+    font-size: 12px;
+    color: #3c4043;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-saisie td {
+    border: 1px solid #dadce0;
+    padding: 8px;
+    background-color: #fff;
+}
+
+.table-saisie input, .table-saisie select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 34px;
+}
+
+.btn-delete {
+    background-color: #ea4335;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-add-line {
+    background-color: #04b129;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.control-banner {
+    background-color: #adf3fc;
+    border: 1px solid #bdf1f8;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.control-title {
+    color: #b06000;
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #f80ee5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
